@@ -1,19 +1,19 @@
 modLoader="javafml" #mandatory
 loaderVersion="[35,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
-license="MIT"
+license=""
 issueTrackerURL="http://my.issue.tracker/" #optional
 
 [[mods]] #mandatory
 modId="tetra_extra" #mandatory
 version="${file.jarVersion}" #mandatory
-displayName="Tetra Extras" #mandatory
+displayName="Tetra Extra" #mandatory
 #updateJSONURL="http://myurl.me/" #optional
 #displayURL="http://example.com/" #optional
 #logoFile="tetra_extra.png" #optional
-credits="Noobulus" #optional
+credits="Noobulus and Grimmauld for helping me get setup. Mickelus for the mod Tetra and code from Tetra" #optional
 authors="Captanredbeard, other people in the future" #optional
 description='''
-Adds modular weapons to Tetra.
+Adds more modular weapons to the MC mod Tetra.
 
 '''
 
@@ -27,7 +27,7 @@ Adds modular weapons to Tetra.
 [[dependencies.tetra_extra]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4,1.17)"
+    versionRange="[1.16.5,1.17)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.tetra_extra]]
