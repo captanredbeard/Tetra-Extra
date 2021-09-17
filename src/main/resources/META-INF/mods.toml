@@ -11,7 +11,7 @@ displayName="Tetra Extra" #mandatory
 #displayURL="http://example.com/" #optional
 #logoFile="tetra_extra.png" #optional
 credits="Noobulus and Grimmauld for helping me get setup. Mickelus for the mod Tetra and code from Tetra" #optional
-authors="Captanredbeard, other people in the future" #optional
+authors="Captanredbeard:coding, AceTheEldritchKing:textures and art" #optional
 description='''
 Adds more modular weapons to the MC mod Tetra.
 
