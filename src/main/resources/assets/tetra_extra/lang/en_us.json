@@ -1,3 +1,7 @@
 {
-    "tetra/schematic/examplemod/wind_blessing.name": "Wind blessing"
+    "tetra.slot.glove/brace": "Bracer",
+    "tetra.slot.glove/back": "Glove X",
+    "tetra.slot.glove/binding": "Binding",
+    "tetra.slot.glove/digits": "Fingers",
+    "tetra.slot.glove/mount": "Mounting"
 }
