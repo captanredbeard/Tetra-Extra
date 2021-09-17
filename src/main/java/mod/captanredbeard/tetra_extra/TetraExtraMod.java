@@ -2,6 +2,7 @@ package mod.captanredbeard.tetra_extra;
 
 import mod.captanredbeard.tetra_extra.items.modular.impl.ModularGloveItem;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import se.mickelus.tetra.ClientScheduler;
+import se.mickelus.tetra.ServerScheduler;
 
 
 @EventBusSubscriber(
@@ -23,7 +26,7 @@ import org.apache.logging.log4j.Logger;
 
         public class TetraExtraMod {
         private static final Logger logger = LogManager.getLogger();
-   //     public static final String MOD_ID = "tetra_extra";
+        public static final String MOD_ID = "tetra_extra";
    /*     public static IProxy proxy = (IProxy)DistExecutor.runForDist(() -> {
         return ClientProxy::new;
         }, () -> {
@@ -33,21 +36,17 @@ import org.apache.logging.log4j.Logger;
     */
         public static TetraExtraMod instance;
         private static Item[] items;
-    //    private static Block[] blocks;
+        private static Block[] blocks;
       //  public static PacketHandler packetHandler;
 
         public TetraExtraMod() {
 
        // FMLJavaModLoadingContext.get().getModEventBus().addListener(CuriosCompat::enqueueIMC);
-    //    TetraAttributes.registry.register(FMLJavaModLoadingContext.get().getModEventBus());
+
         MinecraftForge.EVENT_BUS.register(this);
-     //   MinecraftForge.EVENT_BUS.register(new ItemEffectHandler());
-      //  MinecraftForge.EVENT_BUS.register(new TradeHandler());
-     //   MinecraftForge.EVENT_BUS.register(new DataManager());
-   //     MinecraftForge.EVENT_BUS.register(proxy);
-    //    MinecraftForge.EVENT_BUS.register(new VibrationDebuffer());
-     // MinecraftForge.EVENT_BUS.register(ServerScheduler.class);
-     // MinecraftForge.EVENT_BUS.register(ClientScheduler.class);
+
+      MinecraftForge.EVENT_BUS.register(ServerScheduler.class);
+      MinecraftForge.EVENT_BUS.register(ClientScheduler.class);
 
         //ConfigHandler.setup();
 
@@ -69,10 +68,10 @@ import org.apache.logging.log4j.Logger;
     //    CriteriaTriggers.register(ImprovementCraftCriterion.trigger);
     //    ScrollBlock scrollRolled = new RolledScrollBlock();
 
-        items = new Item[]{new ModularGloveItem()};
+  //      items = new Item[]{new ModularGloveItem()};
 
 
-        items = (Item[])ArrayUtils.addAll(items, new Item[]{new ModularGloveItem()});}
-
+        items = (Item[])ArrayUtils.addAll(items, new Item[]{new ModularGloveItem()});
         }
+}
 
