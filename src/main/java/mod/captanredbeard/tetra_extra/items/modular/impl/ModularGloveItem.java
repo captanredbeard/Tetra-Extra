@@ -23,8 +23,8 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         public static final String digitKey = "glove/digits";
         public static final String mountKey = "glove/mount";
         private static final String unlocalizedName = "modular_glove";
-        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{1, -3, -11, 21, 3 , 24});
-        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{-14, 0, 5, 10});
+        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{21, -3, -11, 1, 3 , 24});
+        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{-14, 0, 3, 1});
         @ObjectHolder("tetra_extra:modular_glove")
         public static ModularGloveItem instance;
 
@@ -36,8 +36,8 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         this.minorModuleKeys = new String[]{"glove/binding","glove/digits"};
         this.requiredModules = new String[]{"glove/brace","glove/back"};
         this.updateConfig((Integer)ConfigHandler.honeSingleBase.get(), (Integer)ConfigHandler.honeSingleIntegrityMultiplier.get());
-        SchematicRegistry.instance.registerSchematic(new RepairSchematic(this));
-        RemoveSchematic.registerRemoveSchematics(this);
+       // SchematicRegistry.instance.registerSchematic(new RepairSchematic(this));
+       // RemoveSchematic.registerRemoveSchematics(this);
         }
 
         public void init(PacketHandler packetHandler) {
