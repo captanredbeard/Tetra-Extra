@@ -54,7 +54,7 @@ public class ConfigHandler {
     static {
         builder.push("Modular tool settings");
         enableGlove = builder.comment("Enable modular Glove").worldRestart().define("glove", true);
-        gloveCurioOnly = builder.comment("Set to true to limit modular glove usage to curios slots only").define("toolbelt_curio_only", false);
+        gloveCurioOnly = builder.comment("Set to true to limit modular glove usage to curios slots only").define("glove_curio_only", false);
         builder.pop();
         spec = builder.build();
     }
