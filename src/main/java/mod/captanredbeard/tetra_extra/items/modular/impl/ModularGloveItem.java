@@ -17,25 +17,24 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         import se.mickelus.tetra.network.PacketHandler;
 
         public class ModularGloveItem extends ItemModularHandheld {
-        public static final String headKey = "single/brace";
-        public static final String handleKey = "single/wrist";
-        public static final String backKey = "single/back";
-        public static final String bindingKey = "single/binding";
-        public static final String digitKey = "single/digits";
-
-        private static final String unlocalizedName = "modular_single";
-        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{1, -3, -11, 21});
-        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{-14, 0});
+        public static final String braceKey = "glove/brace";
+        public static final String backKey = "glove/back";
+        public static final String bindingKey = "glove/binding";
+        public static final String digitKey = "glove/digits";
+        public static final String mountKey = "glove/mount";
+        private static final String unlocalizedName = "modular_glove";
+        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{1, -3, -11, 21, 3 , 24});
+        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{-14, 0, 5, 10});
         @ObjectHolder("tetra_extra:modular_glove")
         public static ModularGloveItem instance;
 
         public ModularGloveItem() {
         super((new Properties()).maxStackSize(1).isImmuneToFire());
-        this.setRegistryName("modular_single");
+        this.setRegistryName("modular_glove");
         this.entityHitDamage = 1;
-        this.majorModuleKeys = new String[]{"single/head", "single/handle"};
-        this.minorModuleKeys = new String[]{"single/binding"};
-        this.requiredModules = new String[]{"single/handle", "single/head"};
+        this.majorModuleKeys = new String[]{"glove/brace","glove/back","glove/mount"};
+        this.minorModuleKeys = new String[]{"glove/binding","glove/digits"};
+        this.requiredModules = new String[]{"glove/brace","glove/back"};
         this.updateConfig((Integer)ConfigHandler.honeSingleBase.get(), (Integer)ConfigHandler.honeSingleIntegrityMultiplier.get());
         SchematicRegistry.instance.registerSchematic(new RepairSchematic(this));
         RemoveSchematic.registerRemoveSchematics(this);
@@ -43,7 +42,7 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
 
         public void init(PacketHandler packetHandler) {
         DataManager.synergyData.onReload(() -> {
-        this.synergies = DataManager.instance.getSynergyData("single/");
+        this.synergies = DataManager.instance.getSynergyData("glove/");
         });
         }
 
@@ -51,7 +50,7 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         this.honeBase = honeBase;
         this.honeIntegrityMultiplier = honeIntegrityMultiplier;
         }
-
+        /*
         public String getModelCacheKey(ItemStack itemStack, LivingEntity entity) {
         return this.isThrowing(itemStack, entity) ? super.getModelCacheKey(itemStack, entity) + ":throwing" : super.getModelCacheKey(itemStack, entity);
         }
@@ -60,7 +59,7 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         public String getTransformVariant(ItemStack itemStack, @Nullable LivingEntity entity) {
         return this.isThrowing(itemStack, entity) ? "throwing" : null;
         }
-
+        */
         @OnlyIn(Dist.CLIENT)
         public GuiModuleOffsets getMajorGuiOffsets() {
         return majorOffsets;
