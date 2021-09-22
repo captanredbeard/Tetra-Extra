@@ -98,12 +98,13 @@ public class TetraExtraMod {
 
     }
     */
+    /*
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public static void modelRegistryReady(ModelRegistryEvent event) {
-        ModelLoaderRegistry.registerLoader(new ResourceLocation("tetra_extra", "modular_loader"), new ModularModelLoader());
+        ModelLoaderRegistry.registerLoader(new ResourceLocation("tetra", "modular_loader"), new ModularModelLoader());
     }
-
+    */
     @SubscribeEvent
     public static void onGatherData(GatherDataEvent event) {
         DataGenerator dataGenerator = event.getGenerator();

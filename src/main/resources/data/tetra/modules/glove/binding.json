@@ -19,24 +19,25 @@
           "textureY": 16
         },
         "availableTextures": ["default"],
-        "models": [{ "location": "tetra:items/module/glove/binding/binding/" }]
+        "models": [{ "location": "tetra:items/module/glove/binding/binding" }]
       }
     },
     {
-      "key": "glove_binding/bolt",
-      "durability": 12,
-      "attributes": {
-        "generic.attack_speed": -0.1
-      },
-      "glyph": {
-        "tint": "bolt_glyph",
-        "textureX": 80,
-        "textureY": 16
-      },
-      "models": [{
-        "location": "tetra:items/module/glove/binding/binding/bolt",
-        "tint": "bolt"
-      }]
+      "materials": ["tetra:metal/"],
+      "key": "glove_binding/",
+      "extract": {
+        "secondaryAttributes": {
+          "generic.attack_speed": -0.1
+        },
+        "durability": 0.1,
+        "integrity": 0.7,
+        "glyph": {
+          "textureX": 88,
+          "textureY": 16
+        },
+        "availableTextures": ["metal"],
+        "models": [{ "location": "tetra:items/module/glove/binding/binding" }]
+      }
     }
   ]
 }
