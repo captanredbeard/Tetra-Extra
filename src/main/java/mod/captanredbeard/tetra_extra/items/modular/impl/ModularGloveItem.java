@@ -26,8 +26,8 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         public static final String digitKey = "glove/digits";
         public static final String mountKey = "glove/mount";
         private static final String unlocalizedName = "modular_glove";
-        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{21, -3, 0, 0, 0, 0});
-        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{-14, 0, 3, 1});
+        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{31, -3, 0, 0, 0, 0});
+        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{0, 0, 0, 0});
         @ObjectHolder("tetra_extra:modular_glove")
         public static ModularGloveItem instance;
 
@@ -38,9 +38,9 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         this.majorModuleKeys = new String[]{"glove/brace","glove/back","glove/mount"};
         this.minorModuleKeys = new String[]{"glove/binding","glove/digits"};
         this.requiredModules = new String[]{"glove/brace","glove/back"};
-        this.updateConfig((Integer)ConfigHandler.honeGloveBase.get(), (Integer)ConfigHandler.honeGloveIntegrityMultiplier.get());
-        SchematicRegistry.instance.registerSchematic(new RepairSchematic(this));
-        RemoveSchematic.registerRemoveSchematics(this);
+        this.updateConfig(ConfigHandler.honeGloveBase.get(), (Integer)ConfigHandler.honeGloveIntegrityMultiplier.get());
+     //   SchematicRegistry.instance.registerSchematic(new RepairSchematic(this));
+       // RemoveSchematic.registerRemoveSchematics(this);
         }
 
         public void init(PacketHandler packetHandler) {
@@ -48,15 +48,16 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         this.synergies = DataManager.instance.getSynergyData("glove/");
         });
         }
+
         public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
                 if (this.isInGroup(group)) {
-                        items.add(this.setupHammerStack("leather", "leather"));
-                        items.add(this.setupHammerStack("iron", "iron"));
+                        items.add(this.setupGloveStack("leather", "leather"));
+                        items.add(this.setupGloveStack("iron", "iron"));
                 }
 
         }
 
-        private ItemStack setupHammerStack(String braceMaterial, String backMaterial) {
+        private ItemStack setupGloveStack(String braceMaterial, String backMaterial) {
                 ItemStack itemStack = new ItemStack(this);
                 IModularItem.putModuleInSlot(itemStack, "glove/brace", "glove/brace", "glove/brace", "basic_glove/" + braceMaterial);
                 IModularItem.putModuleInSlot(itemStack, "glove/back", "double/back", "double/back", "basic_glove/" + backMaterial);
@@ -69,11 +70,6 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         this.honeIntegrityMultiplier = honeIntegrityMultiplier;
         }
 
-
-        @OnlyIn(Dist.CLIENT)
-        public String getTransformVariant(ItemStack itemStack, @Nullable LivingEntity entity) {
-        return null;
-        }
 
         @OnlyIn(Dist.CLIENT)
         public GuiModuleOffsets getMajorGuiOffsets() {
