@@ -12,9 +12,6 @@
         "tetra:bone/"
       ],
       "key": "basic_digits/",
-      "attributes": {
-        "generic.attack_speed": -1.1
-      },
       "durability": 7,
       "integrity": 1,
       "extract": {
@@ -27,8 +24,16 @@
         "glyph": {
           "textureX": 16
         },
-        "availableTextures": ["default", "metal", "bone"],
-        "models": [{ "location": "tetra:items/module/glove/digits/basic/" }]
+        "availableTextures": [
+          "default",
+          "metal",
+          "bone"
+        ],
+        "models": [
+          {
+            "location": "tetra:items/module/glove/digits/basic/"
+          }
+        ]
       }
     }
   ]

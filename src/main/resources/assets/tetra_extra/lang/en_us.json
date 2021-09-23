@@ -4,5 +4,8 @@
     "tetra.slot.glove/back": "Glove X",
     "tetra.slot.glove/binding": "Binding",
     "tetra.slot.glove/digits": "Fingers",
-    "tetra.slot.glove/mount": "Mounting"
+    "tetra.slot.glove/mount": "Mounting",
+
+    "tetra.variant.totem_boss": "Embossed Totem",
+    "tetra/schematic/shield/totem_boss.description": "description here"
 }

@@ -1,0 +1,24 @@
+{
+  "replace": true,
+  "slots": ["shield/boss"],
+  "materialRevealSlot": 0,
+  "repair": "false",
+  "materialSlotCount": 1,
+  "glyph": {
+    "textureX": 64,
+    "textureY": 0
+  },
+  "displayType": "minor",
+  "outcomes": [
+    {
+      "material": {
+        "item": "minecraft:totem_of_undying"
+      },
+      "requiredTools": {
+        "hammer": 3
+      },
+      "moduleKey": "shield/totem_boss",
+      "moduleVariant": "totem_boss"
+    }
+  ]
+}

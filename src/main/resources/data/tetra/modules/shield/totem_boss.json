@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "type": "tetra:basic_module",
+  "slots": [
+    "shield/boss"
+  ],
+  "variants": [
+    {
+      "key": "totem_boss",
+      "durability": 10,
+      "integrity": -1,
+      "glyph": {
+        "textureX": 96,
+        "textureY": 16,
+        "tint": "ffffff"
+      },
+      "availableTextures": ["totem_boss"],
+      "models": [{
+        "type": "shield_boss",
+        "location": "tetra:items/module/shield/boss/totem_boss"}]
+    }
+  ]
+}
