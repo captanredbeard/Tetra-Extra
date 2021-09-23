@@ -1,5 +1,6 @@
 package mod.captanredbeard.tetra_extra;
 
+import mod.captanredbeard.tetra_extra.items.TetraExtraItemGroup;
 import mod.captanredbeard.tetra_extra.items.modular.impl.ModularGloveItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AtlasTexture;
@@ -57,6 +58,7 @@ public class TetraExtraMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         ConfigHandler.setup();
+        new TetraExtraItemGroup();
 
         if ((Boolean)ConfigHandler.enableGlove.get()) {
             items = (Item[])ArrayUtils.addAll(items, new Item[]{new ModularGloveItem()});
