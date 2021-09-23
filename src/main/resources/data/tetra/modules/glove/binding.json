@@ -1,12 +1,17 @@
 {
   "replace": true,
   "type": "tetra:basic_module",
-  "slots": ["glove/binding"],
+  "slots": [
+    "glove/binding"
+  ],
   "renderLayer": "higher",
   "tweakKey": "tetra:glove/binding",
   "variants": [
     {
-      "materials": ["tetra:fibre/", "tetra:skin/"],
+      "materials": [
+        "tetra:fibre/",
+        "tetra:skin/"
+      ],
       "key": "glove_binding/",
       "extract": {
         "secondaryAttributes": {
@@ -18,12 +23,20 @@
           "textureX": 88,
           "textureY": 16
         },
-        "availableTextures": ["default"],
-        "models": [{ "location": "tetra:items/module/glove/binding/binding" }]
+        "availableTextures": [
+          "default"
+        ],
+        "models": [
+          {
+            "location": "tetra:items/module/glove/binding/binding"
+          }
+        ]
       }
     },
     {
-      "materials": ["tetra:metal/"],
+      "materials": [
+        "tetra:metal/"
+      ],
       "key": "glove_binding/",
       "extract": {
         "secondaryAttributes": {
@@ -35,8 +48,14 @@
           "textureX": 88,
           "textureY": 16
         },
-        "availableTextures": ["metal"],
-        "models": [{ "location": "tetra:items/module/glove/binding/binding" }]
+        "availableTextures": [
+          "metal"
+        ],
+        "models": [
+          {
+            "location": "tetra:items/module/glove/binding/binding"
+          }
+        ]
       }
     }
   ]
