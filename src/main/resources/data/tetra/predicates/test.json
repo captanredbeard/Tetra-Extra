@@ -1,0 +1,13 @@
+{
+  "condition": "minecraft:match_tool",
+  "predicate": {
+    "type": "tetra:modular_item",
+    "modules": [
+      ["shield/boss"]
+    ],
+    "variants": {
+      "totem_boss": "shield/boss"
+    }
+  }
+}
+

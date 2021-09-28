@@ -26,8 +26,8 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         public static final String digitKey = "glove/digits";
         public static final String mountKey = "glove/mount";
         private static final String unlocalizedName = "modular_glove";
-        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{31, -3, 0, 0, 0, 0});
-        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{0, 0, 0, 0});
+        private static final GuiModuleOffsets majorOffsets = new GuiModuleOffsets(new int[]{-12, 20,-16, 3, 2, 20});
+        private static final GuiModuleOffsets minorOffsets = new GuiModuleOffsets(new int[]{-8, -6,5,-1});
         @ObjectHolder("tetra_extra:modular_glove")
         public static ModularGloveItem instance;
 
@@ -44,8 +44,8 @@ package mod.captanredbeard.tetra_extra.items.modular.impl;
         }
 
         public void init(PacketHandler packetHandler) {
-        DataManager.synergyData.onReload(() -> {
-        this.synergies = DataManager.instance.getSynergyData("glove/");
+                DataManager.synergyData.onReload(() -> {
+                this.synergies = DataManager.instance.getSynergyData("glove/");
         });
         }
 

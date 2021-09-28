@@ -2,6 +2,7 @@ package mod.captanredbeard.tetra_extra.items;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import se.mickelus.tetra.blocks.geode.GeodeItem;
 
 public class TetraExtraItemGroup extends ItemGroup {
@@ -11,7 +12,6 @@ public class TetraExtraItemGroup extends ItemGroup {
         super("tetra_extra");
         instance = this;
     }
-
     public ItemStack createIcon() {
         return new ItemStack(GeodeItem.instance);
     }

@@ -9,6 +9,9 @@
       "key": "totem_boss",
       "durability": 10,
       "integrity": -1,
+      "effects": {
+        "tetra_extra.totemic": 1
+      },
       "glyph": {
         "textureX": 96,
         "textureY": 16,
