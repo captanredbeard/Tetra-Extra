@@ -25,7 +25,7 @@ public class ConfigHandler {
     public static IntValue honeGloveIntegrityMultiplier;
     public static BooleanValue enableGlove;
     public static BooleanValue gloveCurioOnly;
-    public static BooleanValue totemShieldSocket;
+    public static BooleanValue enableTreeHarvestEffect;
     public static BooleanValue shieldTotemSocket;
     public ConfigHandler() {
     }
@@ -56,10 +56,10 @@ public class ConfigHandler {
         builder.push("Modular tool settings");
         enableGlove = builder.comment("Enable modular Glove").worldRestart().define("glove", true);
         gloveCurioOnly = builder.comment("Set to true to limit modular glove usage to curios slots only").define("glove_curio_only", false);
-        honeGloveBase = builder.comment("The base value for number of uses required before a sword can be honed").defineInRange("hone_sword_base", 110, -2147483648, 2147483647);
+        honeGloveBase = builder.comment("The base value for number of uses required before a sword can be honed").defineInRange("hone_glove_base", 110, -2147483648, 2147483647);
         honeGloveIntegrityMultiplier = builder.comment("Integrity multiplier for sword honing, a value of 2 would cause a sword which uses 3 integrity to require 2*3 times as many uses before it can be honed").defineInRange("hone_sword_integrity_multiplier", 65, -2147483648, 2147483647);
-
-        shieldTotemSocket = builder.comment("Allow socketing a Totem of Undying into a modular shield").define("totemSocket", false);
+        shieldTotemSocket = builder.comment("Allow socketing a Totem of Undying into a modular shield").define("tetra_extra.totemic", true);
+        enableTreeHarvestEffect = builder.comment("Enable the extractor bedrock functionality").worldRestart().define("tetra_extra.treeHarvest", true);
         builder.pop();
         spec = builder.build();
     }

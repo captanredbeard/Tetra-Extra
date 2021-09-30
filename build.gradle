@@ -75,10 +75,13 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.0'
 
     compile fg.deobf("curse.maven:mgui:3456505")
-    compile fg.deobf("curse.maven:tetra:3456516")
+    compile fg.deobf("curse.maven:tetra:3468014")
+    implementation fg.deobf("curse.maven:create:3419412")
+    implementation fg.deobf("curse.maven:flywheel:3459739")
 }
 
 jar {

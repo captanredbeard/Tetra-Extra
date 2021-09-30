@@ -1,4 +1,4 @@
-package mod.captanredbeard.tetra_extra.effect.totemic;
+package mod.captanredbeard.tetra_extra.effect;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.LivingEntity;
@@ -12,12 +12,9 @@ import net.minecraft.util.Hand;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import se.mickelus.tetra.effect.ItemEffect;
+import se.mickelus.tetra.items.modular.IModularItem;
 import se.mickelus.tetra.items.modular.ItemModularHandheld;
 import se.mickelus.tetra.items.modular.ModularItem;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class TotemicEffect{
     private static final ItemEffect totemic = ItemEffect.get("tetra_extra.totemic");
@@ -27,22 +24,20 @@ public class TotemicEffect{
         LivingEntity entity = event.getEntityLiving();
         if(entity.getShouldBeDead()) {
             ItemStack itemstack = null;
-            ModularItem item = null;
+            ModularItem item;
             int level = 0;
             for (Hand hand : Hand.values()) {
                 itemstack = entity.getHeldItem(hand);
                 if (itemstack.getItem() instanceof ItemModularHandheld) {
                     item = (ModularItem) itemstack.getItem();
                     level = item.getEffectLevel(itemstack, totemic);
-                    itemstack.shrink(1);
                     break;
                 }
             }
             if (level > 0) {
-              //  System.out.println(item.getAllModules(itemstack).toArray().toString());
                 totemEffect(entity,itemstack);
+                IModularItem.putModuleInSlot(itemstack,"shield/boss","shield/totem_boss","totem_boss_used");
                 event.setCanceled(true);
-
             }
         }
 
@@ -60,6 +55,4 @@ public class TotemicEffect{
         entity.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 800, 0));
         entity.world.setEntityState(entity, (byte) 35);
     }
-
-
 }
