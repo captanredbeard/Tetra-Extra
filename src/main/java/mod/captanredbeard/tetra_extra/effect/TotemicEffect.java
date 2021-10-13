@@ -24,7 +24,7 @@ public class TotemicEffect{
         LivingEntity entity = event.getEntityLiving();
         if(entity.getShouldBeDead()) {
             ItemStack itemstack = null;
-            ModularItem item;
+            ModularItem item = null;
             int level = 0;
             for (Hand hand : Hand.values()) {
                 itemstack = entity.getHeldItem(hand);
@@ -37,6 +37,7 @@ public class TotemicEffect{
             if (level > 0) {
                 totemEffect(entity,itemstack);
                 IModularItem.putModuleInSlot(itemstack,"shield/boss","shield/totem_boss","totem_boss_used");
+                System.out.println(item.getAllModules(itemstack));
                 event.setCanceled(true);
             }
         }
